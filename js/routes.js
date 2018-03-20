@@ -21,7 +21,11 @@ var routes = [
     url: './pages/photos.html',
     name: 'photos',
   },
-
+  {
+    path: '/grupo/',
+    url: './pages/grupo.html',
+    name: 'grupo',
+  },
   // Color Themes
   {
     path: '/color-themes/',

@@ -4,20 +4,24 @@
         <div class="left">
           <a href="#" class="link back">
             <i class="icon icon-back"></i>
-            <span class="ios-only">Regresar</span>
+            <span class="ios-only"></span>
           </a>
         </div>
-        <div class="title">Atletismo K3</div>
+          <div class="title">
+            <a href="/grupo/" class="link">
+              Atletismo K3
+            </a>
+
+          </div>
         <div class="right">
           <a href="/photos/" class="link icon-only" >
-            <i class="icon f7-icons">camera</i>
+            <i class="icon f7-icons">images</i>
           </a>
         </div>
       </div>
     </div>
-    <div class="toolbar messagebar" @messagebar:attachmentdelete="deleteAttachment">
+    <div class="toolbar messagebar" >
       <div class="toolbar-inner">
-
         <div class="messagebar-area">
           <textarea class="resizable" placeholder="Mensaje"></textarea>
         </div>
@@ -25,14 +29,6 @@
           <i class="icon f7-icons ios-only">arrow_up_fill</i>
           <i class="icon material-icons md-only">send</i>
         </a>
-      </div>
-      <div class="messagebar-sheet">
-        {{#each images}}
-        <label class="checkbox messagebar-sheet-image" style="background-image:url({{this}})" @change="handleAttachment">
-          <input type="checkbox">
-          <i class="icon icon-checkbox"></i>
-        </label>
-        {{/each}}
       </div>
     </div>
     <div class="page-content messages-content">
