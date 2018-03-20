@@ -5,11 +5,16 @@ var routes = [
     url: './index.html',
     name: 'home',
   },
-  // About page
+
   {
     path: '/chatlist/',
     url: './pages/chatlist.html',
     name: 'chatlist',
+  },
+  {
+    path: '/messages/',
+    url: './pages/messages.html',
+    name: 'messages',
   },
 
 
