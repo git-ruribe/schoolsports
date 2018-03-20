@@ -16,7 +16,11 @@ var routes = [
     url: './pages/messages.html',
     name: 'messages',
   },
-
+  {
+    path: '/photos/',
+    url: './pages/photos.html',
+    name: 'photos',
+  },
 
   // Color Themes
   {
