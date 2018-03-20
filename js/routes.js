@@ -26,6 +26,11 @@ var routes = [
     url: './pages/grupo.html',
     name: 'grupo',
   },
+  {
+    path: '/board/',
+    url: './pages/whiteboard.html',
+    name: 'board',
+  },
   // Color Themes
   {
     path: '/color-themes/',
