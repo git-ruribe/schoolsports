@@ -13,7 +13,7 @@ var routes = [
   },
   {
     path: '/messages/',
-    url: './pages/messages.html',
+    url: './pages/whiteboard.html',
     name: 'messages',
   },
   {
@@ -30,6 +30,11 @@ var routes = [
     path: '/board/',
     url: './pages/whiteboard.html',
     name: 'board',
+  },
+  {
+    path: '/partido/',
+    url: './pages/partido.html',
+    name: 'partido',
   },
   // Color Themes
   {

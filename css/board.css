@@ -1,6 +1,15 @@
 .board-card  {
 }
 
+.board-card .bc-black {
+  background-color: #000000 ;
+  color: #ffffff ;
+}
+.board-card .bc-darkgreen {
+  background-color: #22660e ;
+  color: #ffffff ;
+}
+
 .board-card .bc-yellow {
   background-color: #fff3bc ;
 }
