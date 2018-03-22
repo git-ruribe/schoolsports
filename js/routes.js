@@ -36,6 +36,11 @@ var routes = [
     url: './pages/partido.html',
     name: 'partido',
   },
+  {
+    path: '/calcard1/',
+    url: './pages/calcard1.html',
+    name: 'calcard1',
+  },
   // Color Themes
   {
     path: '/color-themes/',
