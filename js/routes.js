@@ -41,6 +41,10 @@ var routes = [
     url: './pages/calcard1.html',
     name: 'calcard1',
   },
+  {
+    path: '/testapi/',
+    componentUrl: './pages/testAPI.html',
+  },
   // Color Themes
   {
     path: '/color-themes/',

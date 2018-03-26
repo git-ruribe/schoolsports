@@ -26,4 +26,7 @@ var app = new Framework7({
     },
   },
   routes: routes,
+  vi: {
+    placementId: 'pltd4o7ibb9rc653x14',
+  },
 });
