@@ -1,0 +1,96 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">Leer de Server
+        </div>
+      </div>
+    </div>
+    <div class="page-content login-screen-content">
+      <form>
+        <div class="list">
+          <ul>
+            <li><a id="btnAct" href="#" class="item-link list-button" @click="actualiza">Leer de BD</a></li>
+            <li>
+            <div class="block-footer" id="textoX">Some text about login information.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </li>
+            <li><a href="#" class="item-link list-button" @click="graba">Grabar</a></li>
+            <li><a href="#" class="item-link list-button" @click="borra">Borrar</a></li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+<script>
+
+
+
+  return {
+    methods: {
+      borra: function () {
+        var $ = this.$;
+        var app = this.$app;
+        app.request({url:'http://35.224.166.57/bucketlists/'+currentValue+'/', method: 'DELETE', crossDomain: true,
+        success: function (data, status, xhr){
+          alert("OK :" + xhr.responseText);
+          $('#btnAct').trigger('click');
+        },
+        error: function (data) {
+          alert("Error :" + data.responseText);
+        },
+        });
+      },
+      graba: function () {
+        var $ = this.$;
+        var app = this.$app;
+        app.request({url:'http://35.224.166.57/bucketlists/'+currentValue+'/', method: 'PUT', crossDomain: true,
+        data:{name:$('#opcionelegida').val()},
+        success: function (data, status, xhr){
+          alert("OK :" + xhr.responseText);
+          $('#btnAct').trigger('click');
+        },
+        error: function (data) {
+          alert("Error :" + data.responseText);
+        },
+        });
+      },
+      actualiza: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+
+        app.request({url:'http://35.224.166.57/bucketlists/', method: 'GET', crossDomain: true,
+        success: function (data, status, xhr) {
+
+            var json_obj = JSON.parse(xhr.responseText);//parse JSON
+            jsonglobal = json_obj;
+
+            var output="<div>";
+            for (var i in json_obj)
+            {
+                output+="<input type='radio' name='opciones' value='" + json_obj[i].id + "' onclick='escoge(this)' >" + json_obj[i].name + "<br>";
+            }
+
+            output+="<br><br><div class='item-title item-label'>Data</div><div class='item-input-wrap'>";
+            output+="<input type='text' id='opcionelegida' class='input-with-value' >";
+
+            output+="<span class='input-clear-button'></span></div></div>";
+
+            $('#textoX').html(output);
+
+        },
+        error: function (data) {alert("Error :" + data.responseText);},
+        });
+
+      }
+
+    }
+  }
+</script>

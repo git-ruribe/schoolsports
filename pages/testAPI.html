@@ -1,7 +1,7 @@
 <template>
   <div class="page no-toolbar no-navbar no-swipeback">
     <div class="page-content login-screen-content">
-      <div class="login-screen-title">Framework7</div>
+      <div class="login-screen-title">Obtener Token</div>
       <form>
         <div class="list">
           <ul>
@@ -19,6 +19,7 @@
                 <div class="item-title item-label">Password</div>
                 <div class="item-input-wrap">
                   <input type="password" placeholder="Your password" id="demo-password-2" class="">
+                  <span class="input-clear-button"></span>
                 </div>
               </div>
             </li>
@@ -44,9 +45,27 @@
         var username = $('input#demo-username-2').val();
         var password = $('input#demo-password-2').val();
         app.request({url:'http://35.224.166.57/get-token/', method: 'POST', data: { username:username, password:password}, crossDomain: true,
-        success: function (data) {alert("Bien :" + data.responseText);},
-        error: function (data) {alert("Error :" + data.responseText);},
-
+        success: function (data, status, xhr) {
+          alert("Token : " + JSON.parse(xhr.responseText).token);
+          $('#textoX').text(JSON.parse(xhr.responseText).token);
+          Framework7.request.setup({
+            headers: {
+              'Authorization': 'Token f33206f22a096061b7b9eed445866aa61f5143b0'
+              }
+            })
+          app.loginScreen.close();
+          router.back();
+          },
+        error: function (data) {
+          alert("Error :" + data.responseText);
+          Framework7.request.setup({
+            headers: {
+              'Authorization': 'Token '
+              }
+            })
+          app.loginScreen.close();
+          router.back();
+        },
         });
       }
     }

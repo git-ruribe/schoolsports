@@ -30,3 +30,17 @@ var app = new Framework7({
     placementId: 'pltd4o7ibb9rc653x14',
   },
 });
+
+var jsonglobal =JSON.parse("{}");
+var currentValue = 0;
+function escoge(myRadio) {
+
+    for (var i in jsonglobal)
+    {
+      if (jsonglobal[i].id==myRadio.value){
+        $('#opcionelegida').val(jsonglobal[i].name);
+        currentValue = jsonglobal[i].id;
+        break;
+      }
+    }
+}

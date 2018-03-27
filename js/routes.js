@@ -45,6 +45,14 @@ var routes = [
     path: '/testapi/',
     componentUrl: './pages/testAPI.html',
   },
+  {
+    path: '/testget/',
+    componentUrl: './pages/testGET.html',
+  },
+  {
+  path: '/testpost/',
+  componentUrl: './pages/testPOST.html',
+  },
   // Color Themes
   {
     path: '/color-themes/',
